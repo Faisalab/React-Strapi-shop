@@ -1,12 +1,29 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Navbar from './Components/Navbar';
+import Products from './Components/Products';
+import Checkout from './Components/Checkout';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+const Root = () => (
+    <Router>
+        <React.Fragment>
+            <Navbar />
+            <Switch>
+                <Route component = {App} exact path="/" />
+                <Route component = {Products} path="/:brandId" />
+                <Route component = {Checkout} exact path="/checkout" />
+                {/* <Route component = {Contact} path="/contact" /> */}
+            </Switch>
+        </React.Fragment>
+    </Router>
+)
+
+ReactDOM.render(<Root />, document.getElementById('root'));
+
+
 serviceWorker.unregister();

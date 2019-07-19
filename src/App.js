@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const apiURL = 'http://localhost:1337';
+
+class App extends Component {
+
+  state = {
+    brands: []
+  }
+
+  
+  async componentDidMount() {
+  console.log(this.props);  
+    try {
+      // const response = strapi.request('GET', 'http://localhost:1337/Restaurants', true);
+      let response = await fetch("http://localhost:1337/Restaurants");
+      let data = await response.json()
+      console.log(data);
+      this.setState({ brands: data });
+      // console.log(this.state.brands);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+  render() {
+    const { brands } = this.state;
+
+    return (
+      <div className="App">
+       
+        <div className="brands">
+          {brands.map(brand => (
+            <div key={brand.id}>
+              <img src={`${apiURL}${brand.images.url}`} alt="restaurant-logo" />
+              <hgroup>
+                <h4>{brand.name}</h4>
+                <h5>{brand.description}</h5>
+              </hgroup>
+              <Link to={`/${brand.id}`}>See Entrees</Link>
+              {/* <button>View Sample Entrees</button> */}
+            </div>
+          ))}
+        </div>
+        
+      </div>
+    );
+  }
+
+  
 }
 
 export default App;
