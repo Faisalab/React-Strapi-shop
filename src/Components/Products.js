@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 // import './App.css';
 import { setCartItems, getCartItems, calculateTotalPrice } from '../storage/index';
 import Strapi from 'strapi-sdk-javascript';
-// import Checkout from './Checkout';
 
 const apiURL = 'http://localhost:1337';
 const strapi = new Strapi(apiURL);
@@ -19,9 +18,6 @@ class App extends Component {
 
 
   async componentDidMount() {
-    console.log(localStorage);
-      // const currentItems = getCartItems('cartItems');
-      // localStorage.setItem('cartItems', currentItems);
       let restId = this.props.match.params.brandId;
       console.log(restId);
     try {
@@ -45,7 +41,7 @@ class App extends Component {
               }`
           }
       });
-    //   console.log(response.data.restaurant.products);
+    //   console.log(response.data.restaurant);
       this.setState({ products: response.data.restaurant.products });
       // console.log(this.state.brands);
     } catch (error) {
@@ -91,7 +87,6 @@ class App extends Component {
       <div className="App">
         {/* User Cart */}
         <div className="card ml-auto" style={{ width: '18rem', height: '200px', margin: '1em'}}>
-          {/* <Cart obj={cartItems} /> */}
           <div className="card-body">
             <h5 className="card-title">Your Cart:</h5>
               {cartItems.map(item => (
@@ -102,7 +97,6 @@ class App extends Component {
               ))}    
           </div>
         <Link to='/checkout' >Checkout</Link>
-            {/* <a href="!#" className="btn btn-primary">Checkout</a> */}
         </div>
         
         <div className="brands">
@@ -135,27 +129,6 @@ function Button(props) {
         </button>
     )
 }
-
-// const Cart = (props) => {
-//   render() {
-//     const { cartItems } = props.obj;
-//     return(
-//       <div className="card-body">
-//        <h5 className="card-title">Your Cart:</h5>
-//           {cartItems.map(item => (
-//             <div key={item.id}>
-              
-//               <p className="card-text">{item.name} x {item.quantity} <span style={{float: 'right'}} >${this.totalPrice(item)}</span> </p>
-//               <p></p>
-//             </div>
-            
-//           ))}
-//         <a href="!#" className="btn btn-primary">Checkout</a>  
-//         </div>
-//     )
-//   } 
-// }
-
 
 
 export default App;

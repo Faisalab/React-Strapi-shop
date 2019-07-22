@@ -6,12 +6,13 @@ export const setCartItems = (items) => {
 }
 
 export const getCartItems = (key) => {
-    let items
+    let items;
     if (localStorage.getItem(key)){
         items = JSON.parse(localStorage.getItem(key)) 
     } else {
         items = []
     }
+    // return items;
 }
 
 export const calculateTotalPrice = (quantity, price) => {

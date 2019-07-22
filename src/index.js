@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -15,8 +15,8 @@ const Root = () => (
             <Navbar />
             <Switch>
                 <Route component = {App} exact path="/" />
-                <Route component = {Products} path="/:brandId" />
-                <Route component = {Checkout} exact path="/checkout" />
+                <Route component = {Checkout} path="/checkout" />
+                <Route component = {Products} exact path="/:brandId" />
                 {/* <Route component = {Contact} path="/contact" /> */}
             </Switch>
         </React.Fragment>

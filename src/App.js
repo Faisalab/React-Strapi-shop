@@ -14,7 +14,7 @@ class App extends Component {
   async componentDidMount() {
   console.log(this.props);  
     try {
-      // const response = strapi.request('GET', 'http://localhost:1337/Restaurants', true);
+      
       let response = await fetch("http://localhost:1337/Restaurants");
       let data = await response.json()
       console.log(data);
@@ -40,8 +40,7 @@ class App extends Component {
                 <h4>{brand.name}</h4>
                 <h5>{brand.description}</h5>
               </hgroup>
-              <Link to={`/${brand.id}`}>See Entrees</Link>
-              {/* <button>View Sample Entrees</button> */}
+              <Link to={`/${brand.id}`}>View Entrees</Link>
             </div>
           ))}
         </div>
