@@ -7,19 +7,7 @@ class Checkout extends Component {
         checkoutItems: JSON.parse(localStorage.getItem('cartItems')) || {}
     }
 
-    componentDidMount(){
-        console.log(this.state.checkoutItems);
-    }
-
-    removeCheckoutItem = (removalId) => {
-        // let removalIndex = this.state.checkoutItems.findIndex(item => item.id === removalId);
-        // let index = removalId;
-        let checkoutItems = [...this.state.checkoutItems];
-        let newCheckoutItems = checkoutItems.filter((_, i) => i !== removalId);
-        setCartItems(newCheckoutItems);
-        this.setState({ checkoutItems: JSON.parse(localStorage.getItem('cartItems')) || {}});
-
-    }       
+       
         
     
 
