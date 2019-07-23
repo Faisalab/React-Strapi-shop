@@ -1,0 +1,1 @@
+A lot learned while enjoying the ride. This mock e-shop is created using various technologies like React.js for the front end, Strapi.js for the api and backend, graphql for querying desired information, and react-router in order to navigate throughout the site.
