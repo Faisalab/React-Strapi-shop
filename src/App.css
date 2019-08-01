@@ -1,6 +1,10 @@
 
 body {
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  /* background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); */
+  background: #2980B9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   background-repeat: no-repeat;
   background-size: cover;
   height: 900px;
@@ -16,7 +20,7 @@ body {
 }
 .main-brands {
   background-color: #212121;
-  color: white;
+  /* color: white; */
   height: 80vh;
   margin: 1em;
   padding: 1em;
@@ -85,11 +89,16 @@ body {
   margin: 2em;
   
 }
-.products div {
+.unsplit {
+  height: 350px;
+  /* border: #2980B9 dashed  */
   background-color: white;
   text-align: center;
   margin: 1em;
   padding: 1em 1em 0 1em;
+  -webkit-box-shadow: -1px 2px 0px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: -1px 2px 0px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: -1px 2px 0px 0px rgba(50, 50, 50, 0.75);
 }
 
 .products img{
@@ -108,6 +117,7 @@ body {
   border: none;
 }
 .split span {
+  
   font-size: 1.1em;
 }
 .split .btn {
@@ -121,6 +131,10 @@ body {
 /* Checkout css */
 .checkout-body {
   color: #212121;
+}
+.checkout-body h5 {
+  font-size: 2em;
+  margin-bottom: 1.5em;
 }
 
 

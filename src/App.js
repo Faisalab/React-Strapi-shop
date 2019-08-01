@@ -41,7 +41,7 @@ class App extends Component {
                 <p class="card-text">{brand.description}</p>
                 
               </div>
-              <Link to={`/${brand.id}`} className="btn btn-primary" >View Entrees</Link>
+              <Link to={`/${brand.id}`} className="btn btn-primary" style={{color: 'rgba(0,0,0,0.75)'}} >View Entrees</Link>
             </div>
             
 

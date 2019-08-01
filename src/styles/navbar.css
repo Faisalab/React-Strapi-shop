@@ -4,6 +4,10 @@
     grid-template-rows: 15vh;
     background-color: #212121;
 }
+.nav div:nth-of-type(2){
+    font-size: 1.4em;
+    /* text-decoration: underline; */
+}
 .nav-item{
     text-align: center;
     margin: 1em;

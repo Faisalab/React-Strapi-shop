@@ -86,7 +86,7 @@ class App extends Component {
     return (
       <div className="App">
         {/* User Cart */}
-        <div className="cart card ml-auto" style={{ width: '18rem', height: 'auto', margin: '1em'}}>
+        <div className="cart card ml-auto" style={{ width: '18rem', height: '250px', margin: '1em'}}>
           <div className="card-body">
             <h5 className="card-title">Your Cart:</h5>
               {cartItems.map(item => (
@@ -101,7 +101,7 @@ class App extends Component {
         
         <div className="products">
           {products.map(product => (
-            <div key={product.id}>
+            <div className="unsplit" key={product.id}>
               <img src={`${apiURL}${product.image.url}`} alt="product-images" />
               <h5>{product.description}</h5>
 
