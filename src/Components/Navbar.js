@@ -7,8 +7,8 @@ function Navbar() {
         <div className="nav">
 
             <div className="nav-item"><NavLink to="/">Home</NavLink></div>
-            <div className="nav-item"><NavLink to="/"><i className="fas fa-home"></i></NavLink></div>
-            <div className="nav-item"><NavLink to="/contact">Contact</NavLink></div>   
+            <div className="nav-item"><NavLink to="/"><i class="fas fa-utensils"></i>&nbsp; The Three Courses</NavLink></div>
+            <div className="nav-item"><NavLink to="/checkout">Checkout</NavLink></div>   
             {/* <div className="nav-item"><NavLink to="/checkout">Checkout</NavLink></div>    */}
 
 

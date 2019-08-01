@@ -17,11 +17,11 @@ class Checkout extends Component {
         const { checkoutItems } = this.state;
         return (
             <div className="card">
-                <div className="card-body">
+                <div className="checkout-body card-body">
                     <h5>Cart Summary: </h5>
                     {checkoutItems.map(item => (
                         <div key={item.id} style={{margin: '1em'}} className="card">
-                            <div className="card-body">
+                            <div className="checkout-body card-body">
                                     <p className="card-text">
                                         {item.name} x {item.quantity} 
                                         <span style={{float: 'right'}}>${calculateTotalPrice(item.quantity, item.price)}</span> 

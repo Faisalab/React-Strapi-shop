@@ -34,14 +34,18 @@ class App extends Component {
        
         <div className="brands">
           {brands.map(brand => (
-            <div key={brand.id}>
-              <img src={`${apiURL}${brand.images.url}`} alt="restaurant-logo" />
-              <hgroup>
-                <h4>{brand.name}</h4>
-                <h5>{brand.description}</h5>
-              </hgroup>
-              <Link to={`/${brand.id}`}>View Entrees</Link>
+            <div key={brand.id} className="main-brands card" >
+               <img src={`${apiURL}${brand.images.url}`} class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">{brand.name}</h5>
+                <p class="card-text">{brand.description}</p>
+                
+              </div>
+              <Link to={`/${brand.id}`} className="btn btn-primary" >View Entrees</Link>
             </div>
+            
+
+
           ))}
         </div>
         

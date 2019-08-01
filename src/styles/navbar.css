@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 15vh;
-    background-color: dimgray;
+    background-color: #212121;
 }
 .nav-item{
     text-align: center;

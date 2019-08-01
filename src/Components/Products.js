@@ -86,34 +86,40 @@ class App extends Component {
     return (
       <div className="App">
         {/* User Cart */}
-        <div className="card ml-auto" style={{ width: '18rem', height: '200px', margin: '1em'}}>
+        <div className="cart card ml-auto" style={{ width: '18rem', height: 'auto', margin: '1em'}}>
           <div className="card-body">
             <h5 className="card-title">Your Cart:</h5>
               {cartItems.map(item => (
                 <div key={item.id}>
                   <p className="card-text">{item.name} x {item.quantity} <span style={{float: 'right'}}>${calculateTotalPrice(item.quantity, item.price)}</span> </p>
-                  {/* <p></p> */}
+                  
                 </div>
               ))}    
           </div>
         <Link to='/checkout' >Checkout</Link>
         </div>
         
-        <div className="brands">
+        <div className="products">
           {products.map(product => (
             <div key={product.id}>
               <img src={`${apiURL}${product.image.url}`} alt="product-images" />
-              <hgroup>
-                <h4>{product.name}</h4>
-                <h5>{product.description}</h5>
-                <h5>{product.price}</h5> 
-              </hgroup>
-              <Button 
-                text='add to cart'
-                clickHandler={() => this.handleClick(product)}
-              />
+              <h5>{product.description}</h5>
+
+              <div className="split">
+                <span>{product.name} </span>
+                <span>${product.price}</span>
+                <span>
+                  <Button 
+                    text='add to cart'
+                    clickHandler={() => this.handleClick(product)}
+                  />
+                </span>  
+              </div>              
+                          
             </div>
+            
           ))}
+          
         </div>
         
         

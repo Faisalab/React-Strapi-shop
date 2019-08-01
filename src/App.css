@@ -1,15 +1,129 @@
+
+body {
+  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 900px;
+  font-family: 'Lora',Arial, Helvetica, sans-serif 
+}
+
+
 .brands{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 500px;
+  margin: 2em;
 }
-.brands div{
-  text-align: center;
+.main-brands {
+  background-color: #212121;
+  color: white;
+  height: 80vh;
   margin: 1em;
+  padding: 1em;
+  -webkit-box-shadow: 0px 0px 9px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 9px 2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 9px 2px rgba(0,0,0,0.75);
+}
+
+.card-body{
+  color: white;
+  height: auto;
+  text-shadow: 1px 0px 2px rgba(150, 150, 150, 0.9);
+}
+
+.card-title {
+  font-size: 1.7em;
+}
+.card-text {
+  font-size: 1.1em;
 }
 
 .brands img{
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 40vh;
 }
+
+.btn-primary {
+  border: none;
+  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);  color: white;
+  margin: 0 auto;
+  padding: 0.8em;
+  
+} 
+.btn-primary:hover {
+  background-image: linear-gradient(to left, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);}
+
+  /* End of Brands CSS */
+
+  /* Cart css */
+
+  .cart {
+    background-color: white;
+    
+  }
+  .cart .card-title {
+    color: darkslategray;
+  }
+  .cart .card-text {
+    color: darkslategrey;
+  }
+  .cart a {
+    margin: 0 auto;
+    font-size: 1.2em;
+    color: darkslategrey;
+  }
+
+  /* End of Cart css */
+
+/* Products css */
+
+.products{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: 250px; */
+  /* padding: 2em; */
+  margin: 2em;
+  
+}
+.products div {
+  background-color: white;
+  text-align: center;
+  margin: 1em;
+  padding: 1em 1em 0 1em;
+}
+
+.products img{
+  width: 150px;
+  height: 150px;
+}
+.products h5 {
+  margin-top: 1em;
+}
+
+.split{
+  width: inherit;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  
+  margin-top: 2em;
+  border: none;
+}
+.split span {
+  font-size: 1.1em;
+}
+.split .btn {
+  padding: 0.5em;
+  background-color: #80CBC4;
+  
+}
+
+/* End of Products css */
+
+/* Checkout css */
+.checkout-body {
+  color: #212121;
+}
+
+
+
+/* End of Checkout css */
 
