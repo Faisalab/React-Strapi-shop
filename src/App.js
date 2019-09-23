@@ -10,16 +10,14 @@ class App extends Component {
     brands: []
   }
 
-  
   async componentDidMount() {
-  console.log(this.props);  
+  console.log(this.props);
     try {
-      
-      let response = await fetch("http://localhost:1337/Restaurants");
+      // Make request to back end to recieve restaurant
+      let response = await fetch(`${apiURL}/Restaurants`);
       let data = await response.json()
-      console.log(data);
+      // set brands to restaurant info recieved
       this.setState({ brands: data });
-      // console.log(this.state.brands);
     } catch (error) {
       console.log(error);
     }
@@ -31,29 +29,24 @@ class App extends Component {
 
     return (
       <div className="App">
-       
+
         <div className="brands">
           {brands.map(brand => (
             <div key={brand.id} className="main-brands card" >
-               <img src={`${apiURL}${brand.images.url}`} class="card-img-top" alt="..."/>
+               <div style={{textAlign: 'center'}}>
+                  <img src={`${apiURL}${brand.images.url}`} class="card-img-top" alt={`Click me for ${brand.name}`}/>
+                </div>
               <div class="card-body">
                 <h5 class="card-title">{brand.name}</h5>
                 <p class="card-text">{brand.description}</p>
-                
               </div>
               <Link to={`/${brand.id}`} className="btn btn-primary" style={{color: 'rgba(0,0,0,0.75)'}} >View Entrees</Link>
             </div>
-            
-
-
           ))}
         </div>
-        
       </div>
     );
   }
-
-  
 }
 
 export default App;

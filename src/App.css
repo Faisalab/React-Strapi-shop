@@ -1,27 +1,22 @@
 
 body {
-  /* background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); */
-  background: #2980B9;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #34495E;
   background-repeat: no-repeat;
   background-size: cover;
   height: 900px;
-  font-family: 'Lora',Arial, Helvetica, sans-serif 
+  font-family: 'Lora',Arial, Helvetica, sans-serif
 }
 
 
 .brands{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 500px;
   margin: 2em;
 }
 .main-brands {
-  background-color: #212121;
-  /* color: white; */
-  height: 80vh;
+  background-color: #67809F;
+  border: 2px white solid;
+  height: 90vh;
   margin: 1em;
   padding: 1em;
   -webkit-box-shadow: 0px 0px 9px 2px rgba(0,0,0,0.75);
@@ -43,27 +38,33 @@ body {
 }
 
 .brands img{
-  width: 100%;
-  height: 40vh;
+  width: 90%;
+  height: 45vh;
+  border-radius: 7px;
+  border: 5px white solid;
 }
 
 .btn-primary {
   border: none;
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);  color: white;
+  background-image: linear-gradient(to top, #59abe3 0%, #89c4f4 99%, #89c4f4 100%);  color: white;
   margin: 0 auto;
   padding: 0.8em;
-  
-} 
+
+}
 .btn-primary:hover {
-  background-image: linear-gradient(to left, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);}
+  background-image: linear-gradient(to left, #59abe3 0%, #89c4f4 99%, #89c4f4 100%);}
 
   /* End of Brands CSS */
 
   /* Cart css */
+  .cart-split{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .cart {
     background-color: white;
-    
+
   }
   .cart .card-title {
     color: darkslategray;
@@ -84,15 +85,14 @@ body {
 .products{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: 250px; */
-  /* padding: 2em; */
   margin: 2em;
-  
+
 }
 .unsplit {
   height: 350px;
-  /* border: #2980B9 dashed  */
-  background-color: white;
+  border: 2px white solid; 
+  background-color: #67809F;
+  color: white;
   text-align: center;
   margin: 1em;
   padding: 1em 1em 0 1em;
@@ -112,30 +112,97 @@ body {
 .split{
   width: inherit;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 2em;
   border: none;
 }
 .split span {
-  
+
   font-size: 1.1em;
 }
 .split .btn {
   padding: 0.5em;
-  background-color: #80CBC4;
-  
+  background-color: #59abe3;
+  border: 1px solid white;
 }
 
 /* End of Products css */
 
 /* Checkout css */
-.checkout-body {
-  color: #212121;
+.checkout-container{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  /* text-align: center; */
 }
-.checkout-body h5 {
-  font-size: 2em;
-  margin-bottom: 1.5em;
+.cart-summary{
+  border: 2px white solid;
+  background: #67809F;
+  margin: 0.5em;
+  color: white;
+  border-radius: 7px;
 }
+.cart-summary p {
+  font-size: 1.5em;
+  margin: 0.5em;
+}
+.cart-summary h3 {
+  margin: 3em 0.5em 0.5em 0.5em;
+  float: right;
+}
+.remover{
+  float: right;
+  margin-right: 1em;
+}
+.remover a{
+  color: red;
+  font-weight: 900;
+}
+.remover a:hover{
+  text-decoration: none;
+}
+
+.checkout-form{
+  text-align: center;
+  margin-top: 10vh;
+  border: 2px solid white; 
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 7px;
+}
+.checkout-form div{
+  margin: 1em;
+}
+
+.StripeElement{
+  background: white;
+  padding: 0.3em;
+  width: 92%;
+}
+.check-btn{
+  background: #556cd6;
+  border: 1px solid white;
+  padding: 0.5em 1.5em;
+  border-radius: 6px;
+  color: white;
+  -webkit-box-shadow: 0px 0px 8px 3px rgba(85,108,214,0.75);
+  -moz-box-shadow: 0px 0px 8px 3px rgba(85,108,214,0.75);
+  box-shadow: 0px 0px 8px 3px rgba(85,108,214,0.75);
+  cursor: pointer;
+  /* font-weight: 700; */
+}
+
+.add-items-text{
+  color: white;
+  text-align: center;
+  width: 50%;
+  margin: 4em auto;
+  border: 5px solid silver;
+  border-radius: 7px;
+}
+.add-items-text{
+  padding: 2em 0;
+}
+
 
 
 

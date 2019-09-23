@@ -3,6 +3,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 15vh;
     background-color: #212121;
+    /* border-bottom: gray */
 }
 .nav div:nth-of-type(2){
     font-size: 1.4em;
